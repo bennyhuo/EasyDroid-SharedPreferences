@@ -14,8 +14,7 @@ This is temporary and I am considering uploading those to maven so that you can 
 You can refer to the app as a demo. You may have already got bored of the stuff like this:
 
 ``` java
-// While I wanna save a preference
-//When I was new to Android, it is terrible for me to commit after update a value like that above. 
+//When I was new to Android, it is terrible for me to commit after update a value like that. 
 context.getSharedPreferences("whatever a name", Context.MODE_PRIVATE)
 .edit().putString("aKey", "aValue").commit();
 
@@ -23,7 +22,7 @@ context.getSharedPreferences("whatever a name", Context.MODE_PRIVATE)
 .getString("blahblah", "default");
 ```
 
-You shall never do this repeatedly. Behold,
+You shall never do that repeatedly. Behold,
 
 ``` java
 StringPreference sp = new StringPreference(context, "name of the shared preference", "key", "defaultValue");
@@ -31,7 +30,7 @@ StringPreference sp = new StringPreference(context, "name of the shared preferen
 String value = sp.val(); // get the preference value.
 sp.set("New Value"); // update it.
 ```
-Some params of the constructor are optional such as the default value.
+Everytime you wanna get or set the value, just call a simple method. Some params of the constructor are optional such as the default value.
 
 It's easy and let the blahblah things be gone.
 
